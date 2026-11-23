@@ -1,0 +1,246 @@
+:root {
+  --fundo: #f4f4f2;
+  --azul: #2e3a8c;
+  --azul-hover: #3a48a8;
+  --vermelho: #e52d2f;
+  --vermelho-hover: #c8202a;
+  --amarelo: #f5d94a;
+  --cinza: #8a8a8a;
+  --texto: #333;
+  --borda-modal: #4db3f5;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Roboto", system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 28px 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 3px solid var(--amarelo);
+}
+.topo-texto {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: clamp(12px, 1.3vw, 16px);
+  color: #333;
+}
+.topo-texto em { font-weight: 700; }
+.topo-logos { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.logo-espm { height: 32px; }
+.logo-msp { height: 34px; }
+
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+button { font: inherit; cursor: pointer; }
+button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3px; }
+
+/* ---------- Página inicial ---------- */
+.titulo-inicial {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  color: var(--azul);
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  font-size: clamp(48px, 9vw, 130px);
+  margin: clamp(32px, 7vw, 100px) 0 clamp(24px, 3vw, 40px);
+}
+
+.jornada {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0 -16px;
+  padding: 0;
+}
+.jornada li { flex: 1 1 0; min-width: 0; }
+
+.seta {
+  --ponta: 28px;
+  width: 100%;
+  height: clamp(110px, 11vw, 165px);
+  border: 0;
+  background: var(--vermelho);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(13px, 1.45vw, 21px);
+  line-height: 1.1;
+  white-space: pre-line;
+  padding: 0 calc(var(--ponta) - 4px) 0 calc(var(--ponta) + 6px);
+  clip-path: polygon(0 0, calc(100% - var(--ponta)) 0, 100% 50%, calc(100% - var(--ponta)) 100%, 0 100%, var(--ponta) 50%);
+  transition: background .15s, transform .15s;
+}
+.seta:hover { background: var(--vermelho-hover); transform: translateY(-4px); }
+
+.dica {
+  text-align: center;
+  color: var(--cinza);
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  margin-top: 28px;
+  font-size: 15px;
+}
+
+/* ---------- Página da etapa ---------- */
+.etapa-topo { text-align: center; margin: 24px 0 20px; position: relative; }
+
+.inicio {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  color: var(--cinza);
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px;
+}
+.inicio:hover { color: var(--azul); }
+
+.ponto-contato {
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  color: var(--cinza);
+  font-size: clamp(20px, 2.4vw, 32px);
+  margin: 0;
+}
+.titulo-etapa {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--vermelho);
+  font-size: clamp(32px, 5.6vw, 80px);
+  line-height: 1;
+  margin: 4px 0 0;
+}
+
+.opcoes { display: grid; gap: 16px; list-style: none; margin: 0; padding: 0; }
+.opcao {
+  width: 100%;
+  min-height: 80px;
+  border: 0;
+  background: var(--azul);
+  color: #fff;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: clamp(20px, 2.4vw, 34px);
+  padding: 12px 16px;
+  transition: background .15s;
+}
+.opcao:hover { background: var(--azul-hover); }
+
+.navegacao {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+}
+.navegacao button {
+  background: none;
+  border: 2px solid var(--vermelho);
+  color: var(--vermelho);
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+}
+.navegacao button:hover { background: var(--vermelho); color: #fff; }
+.navegacao .vazio { visibility: hidden; }
+
+/* ---------- Janela de informação (modal) ---------- */
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(244, 244, 242, 0.3);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(80px, 34vh, 300px) 16px 0;
+  z-index: 10;
+  animation: aparecer .15s ease-out;
+}
+.modal-fundo[hidden] { display: none; }
+
+.modal {
+  width: min(740px, 100%);
+  min-height: min(520px, calc(100vh - 120px));
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  background: var(--fundo);
+  border: 3px solid var(--borda-modal);
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  padding: 20px 20px 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .12);
+  animation: subir .2s ease-out;
+}
+.voltar {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--cinza);
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 26px;
+}
+.voltar:hover { color: var(--azul); }
+
+.modal h3 {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  color: var(--azul);
+  font-size: clamp(26px, 3vw, 38px);
+  letter-spacing: -0.02em;
+  margin: 4px 0 16px;
+}
+.modal-conteudo { font-size: clamp(18px, 2vw, 26px); line-height: 1.3; }
+.modal-conteudo p { margin: 0 0 16px; }
+.modal-conteudo ul { margin: 0 0 16px; padding-left: 1.2em; }
+.modal-conteudo .em-breve { color: var(--cinza); font-style: italic; }
+
+@keyframes aparecer { from { opacity: 0; } }
+@keyframes subir { from { transform: translateY(24px); opacity: 0; } }
+
+/* ---------- Telas menores ---------- */
+@media (max-width: 900px) {
+  .jornada { flex-wrap: wrap; margin: 0; gap: 8px 4px; }
+  .jornada li { flex: 1 1 calc(25% - 4px); }
+  .seta { font-size: 15px; height: 110px; --ponta: 20px; }
+}
+@media (max-width: 560px) {
+  .topo { padding-top: 16px; }
+  .logo-espm { height: 24px; }
+  .logo-msp { height: 26px; }
+  .jornada li { flex: 1 1 calc(50% - 4px); }
+  .etapa-topo { padding-top: 32px; }
+  .opcao { min-height: 64px; }
+  .modal-fundo { padding-top: 90px; }
+  .voltar { font-size: 20px; }
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jornada Atual da Visita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Montserrat:ital,wght@0,600;1,600;1,700;1,800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topo">
+    <p class="topo-texto" id="cabecalho"></p>
+    <div class="topo-logos">
+      <img src="assets/logo-espm.png" alt="ESPM" class="logo-espm">
+      <img src="assets/logo-msp.png" alt="MSP Estúdios" class="logo-msp">
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <div class="modal-fundo" id="modal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="voltar" id="modal-voltar" type="button">Voltar</button>
+      <h3 id="modal-titulo"></h3>
+      <div class="modal-conteudo" id="modal-conteudo"></div>
+    </section>
+  </div>
+
+  <script src="conteudo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
