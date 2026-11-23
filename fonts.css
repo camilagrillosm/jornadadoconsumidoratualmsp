@@ -1,8 +1,8 @@
 /* Fontes salvas no próprio site (não dependem do Google Fonts) */
 @font-face {
   font-family: "Baloo 2";
-  src: url("assets/fonts/baloo-2-latin-700-normal.woff2") format("woff2");
-  font-weight: 700;
+  src: url("assets/fonts/baloo-2-latin-800-normal.woff2") format("woff2");
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
