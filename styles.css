@@ -68,9 +68,14 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
 
 .jornada {
   display: flex;
-  gap: 4px;
+  gap: 6px;
   list-style: none;
-  margin: 0 -16px;
+  /* um pouco mais larga que o conteúdo e mais afastada do título */
+  width: min(calc(100vw - 32px), 1460px);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: clamp(32px, 5vw, 80px) 0 0;
   padding: 0;
 }
 .jornada li { flex: 1 1 0; min-width: 0; }
@@ -78,14 +83,15 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
 .seta {
   --ponta: 28px;
   width: 100%;
-  height: clamp(110px, 11vw, 165px);
+  position: relative;
+  height: clamp(120px, 13vw, 195px);
   border: 0;
   background: var(--vermelho);
   color: #fff;
   font-family: "Montserrat", sans-serif;
   font-style: italic;
   font-weight: 700;
-  font-size: clamp(13px, 1.45vw, 21px);
+  font-size: clamp(14px, 1.7vw, 25px);
   line-height: 1.1;
   white-space: pre-line;
   padding: 0 calc(var(--ponta) - 4px) 0 calc(var(--ponta) + 6px);
@@ -93,6 +99,24 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
   transition: background .15s, transform .15s;
 }
 .seta:hover { background: var(--vermelho-hover); transform: translateY(-4px); }
+
+/* número da ordem, no canto superior esquerdo de cada seta */
+.seta-numero {
+  position: absolute;
+  top: 10px;
+  left: calc(var(--ponta) * 0.5 + 4px);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--vermelho);
+  font-family: "Baloo 2", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 32px;
+  text-align: center;
+}
 
 .dica {
   text-align: center;
@@ -230,9 +254,10 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
 
 /* ---------- Telas menores ---------- */
 @media (max-width: 900px) {
-  .jornada { flex-wrap: wrap; margin: 0; gap: 8px 4px; }
+  .jornada { flex-wrap: wrap; width: auto; left: auto; transform: none; margin: 0; gap: 8px 4px; }
   .jornada li { flex: 1 1 calc(25% - 4px); }
   .seta { font-size: 15px; height: 110px; --ponta: 20px; }
+  .seta-numero { top: 8px; width: 24px; height: 24px; font-size: 15px; line-height: 26px; }
 }
 @media (max-width: 560px) {
   .topo { padding-top: 16px; }
