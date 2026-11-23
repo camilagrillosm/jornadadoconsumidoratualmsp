@@ -23,8 +23,8 @@
     app.innerHTML = `
       <h1 class="titulo-inicial">${dados.tituloInicial}</h1>
       <ol class="jornada">
-        ${dados.etapas.map((e) => `
-          <li><button class="seta" type="button" data-etapa="${e.id}">${esc(e.nome)}</button></li>
+        ${dados.etapas.map((e, i) => `
+          <li><button class="seta" type="button" data-etapa="${e.id}"><span class="seta-numero" aria-hidden="true">${i + 1}</span>${esc(e.nome)}</button></li>
         `).join("")}
       </ol>
       <p class="dica">Clique em uma etapa da jornada para ver os detalhes</p>
