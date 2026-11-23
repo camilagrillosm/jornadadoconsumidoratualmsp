@@ -55,7 +55,7 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
 
 /* ---------- Página inicial ---------- */
 .titulo-inicial {
-  font-family: "Fredoka", sans-serif;
+  font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   color: var(--azul);
   text-transform: uppercase;
@@ -130,7 +130,7 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
   margin: 0;
 }
 .titulo-etapa {
-  font-family: "Fredoka", sans-serif;
+  font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--vermelho);
@@ -146,8 +146,8 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
   border: 0;
   background: var(--azul);
   color: #fff;
-  font-family: "Fredoka", sans-serif;
-  font-weight: 600;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   font-size: clamp(20px, 2.4vw, 34px);
   padding: 12px 16px;
   transition: background .15s;
@@ -213,8 +213,8 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
 .voltar:hover { color: var(--azul); }
 
 .modal h3 {
-  font-family: "Fredoka", sans-serif;
-  font-weight: 600;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
   color: var(--azul);
   font-size: clamp(26px, 3vw, 38px);
   letter-spacing: -0.02em;
