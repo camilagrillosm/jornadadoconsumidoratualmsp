@@ -258,7 +258,18 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
   .topo { padding-top: 16px; }
   .logo-espm { height: 24px; }
   .logo-msp { height: 26px; }
-  .jornada li { flex: 1 1 calc(50% - 4px); }
+  /* celular: setas empilhadas apontando para baixo, uma encaixada na outra */
+  .jornada { --dente: 22px; flex-direction: column; align-items: center; gap: 0; }
+  .jornada li { flex: none; width: min(250px, 68%); }
+  .jornada li + li { margin-top: calc(var(--dente) * -1 + 6px); }
+  .seta {
+    height: 128px;
+    font-size: 16px;
+    padding: var(--dente) 16px;
+    clip-path: polygon(0 0, 50% var(--dente), 100% 0, 100% calc(100% - var(--dente)), 50% 100%, 0 calc(100% - var(--dente)));
+  }
+  .seta:hover { transform: none; }
+  .seta-numero { top: 10px; left: 14px; }
   .etapa-topo { padding-top: 32px; }
   .opcao { min-height: 64px; }
   .modal-fundo { padding-top: 90px; }
