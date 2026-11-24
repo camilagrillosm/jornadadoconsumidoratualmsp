@@ -104,18 +104,13 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
 .seta-numero {
   position: absolute;
   top: 10px;
-  left: calc(var(--ponta) * 0.5 + 4px);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--vermelho);
+  left: calc(var(--ponta) * 0.5 + 6px);
+  color: #fff;
   font-family: "Baloo 2", sans-serif;
   font-style: normal;
   font-weight: 800;
-  font-size: 18px;
-  line-height: 32px;
-  text-align: center;
+  font-size: 17px;
+  line-height: 1;
 }
 
 .dica {
@@ -257,7 +252,7 @@ button:focus-visible { outline: 3px solid var(--borda-modal); outline-offset: 3p
   .jornada { flex-wrap: wrap; width: auto; left: auto; transform: none; margin: 0; gap: 8px 4px; }
   .jornada li { flex: 1 1 calc(25% - 4px); }
   .seta { font-size: 15px; height: 110px; --ponta: 20px; }
-  .seta-numero { top: 8px; width: 24px; height: 24px; font-size: 15px; line-height: 26px; }
+  .seta-numero { top: 7px; font-size: 13px; }
 }
 @media (max-width: 560px) {
   .topo { padding-top: 16px; }
